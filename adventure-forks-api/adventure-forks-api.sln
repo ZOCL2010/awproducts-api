@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "adventure-forks-api", "adventure-forks-api\adventure-forks-api.csproj", "{D96626E2-F01C-4B3B-B5F1-0F1091A66615}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "adventure-forks-database", "adventure-forks-database\adventure-forks-database.csproj", "{06842C94-BC99-4DA8-90EF-F2EC548AA883}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D96626E2-F01C-4B3B-B5F1-0F1091A66615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D96626E2-F01C-4B3B-B5F1-0F1091A66615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D96626E2-F01C-4B3B-B5F1-0F1091A66615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D96626E2-F01C-4B3B-B5F1-0F1091A66615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06842C94-BC99-4DA8-90EF-F2EC548AA883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06842C94-BC99-4DA8-90EF-F2EC548AA883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06842C94-BC99-4DA8-90EF-F2EC548AA883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06842C94-BC99-4DA8-90EF-F2EC548AA883}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3E061BF-A1D2-445A-9D12-118B36CCD196}
+	EndGlobalSection
+EndGlobal
