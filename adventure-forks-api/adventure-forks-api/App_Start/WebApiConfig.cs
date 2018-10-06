@@ -3,6 +3,7 @@ using System.Web.Http;
 using adventure_forks_database;
 using Autofac;
 using Autofac.Integration.WebApi;
+using AutoMapper;
 
 namespace adventure_forks_api
 {
@@ -15,6 +16,11 @@ namespace adventure_forks_api
             containerBuilder.RegisterType<DatabaseService>().As<IDatabaseService>();
             var container = containerBuilder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+
+            Mapper.Initialize(cfg => {
+                cfg.CreateMap<Product, ProductDto>();
+                cfg.CreateMap<ProductDto, Product>();
+            });
 
             config.MapHttpAttributeRoutes();
 

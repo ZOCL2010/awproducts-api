@@ -5,20 +5,13 @@ namespace adventure_forks_database
 {
     public interface IDatabaseService : IDisposable
     {
-        Product GetProduct(int productId);
+        ProductDto GetProduct(int productId);
 
-        List<Product> GetAllProducts();
+        List<ProductDto> GetAllProducts();
 
-        Product CreateProduct(string name, string productNumber, decimal standardCost, decimal listPrice, string size, decimal weight);
+        ProductDto CreateProduct(string name, string productNumber, decimal standardCost, decimal listPrice, string size, decimal weight);
 
-        bool UpdateProduct(
-            int productId,
-            string name,
-            string productNumber,
-            decimal standardCost,
-            decimal listPrice,
-            string size,
-            decimal weight);
+        bool UpdateProduct(ProductDto product);
 
         bool DeleteProduct(int productId);
     }

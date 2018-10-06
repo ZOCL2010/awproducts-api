@@ -19,10 +19,10 @@ namespace adventure_forks_api.Controllers
         // GET api/products
         [SwaggerOperation("Gets all documents.")]
         [SwaggerResponse(HttpStatusCode.OK)]
-        public IHttpActionResult Get()
+        [HttpGet]
+        public List<ProductDto> Get()
         {
-            var allProducts = _databaseService.GetAllProducts();
-            return Ok(allProducts);
+            return _databaseService.GetAllProducts();
         }
 
         // GET api/products/{id}
@@ -30,6 +30,7 @@ namespace adventure_forks_api.Controllers
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [Route("products/{id}")]
+        [HttpGet]
         public IHttpActionResult Get(int id)
         {
             var product = _databaseService.GetProduct(id);
@@ -45,6 +46,7 @@ namespace adventure_forks_api.Controllers
         // POST api/products
         [SwaggerOperation("Creates new document.")]
         [SwaggerResponse(HttpStatusCode.Created)]
+        [HttpPost]
         public IHttpActionResult Post([FromUri] string name, 
                                       [FromUri] string productNumber, 
                                       [FromUri] decimal standardCost,
@@ -53,22 +55,17 @@ namespace adventure_forks_api.Controllers
                                       [FromUri] decimal weight)
         {
             var newProduct = _databaseService.CreateProduct(name, productNumber, standardCost, listPrice, size, weight);
-            return Created($"/products/{newProduct.ProductID}", newProduct);
+            return Created($"/products/{newProduct.ProductId}", newProduct);
         }
 
-        // PUT api/products/{id}
         [SwaggerOperation("Updates document.")]
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
-        public IHttpActionResult Put([FromUri] int productId, 
-                                     [FromUri] string name,
-                                     [FromUri] string productNumber,
-                                     [FromUri] decimal standardCost,
-                                     [FromUri] decimal listPrice,
-                                     [FromUri] string size,
-                                     [FromUri] decimal weight)
+        [Route("products/{id}")]
+        [HttpPut]
+        public IHttpActionResult Put(int id, [FromBody] ProductDto product)
         {
-            var result = _databaseService.UpdateProduct(productId, name, productNumber, standardCost, listPrice, size, weight);
+            var result = _databaseService.UpdateProduct(product);
             if (result)
             {
                 return Ok();
@@ -82,9 +79,10 @@ namespace adventure_forks_api.Controllers
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [Route("products/{id}")]
-        public IHttpActionResult Delete(int productId)
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
         {
-            var result = _databaseService.DeleteProduct(productId);
+            var result = _databaseService.DeleteProduct(id);
             if (result)
             {
                 return Ok();

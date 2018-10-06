@@ -82,3 +82,8 @@ d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adve
 d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-api\obj\Debug\adventure-forks-api.pdb
 d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-api\bin\EntityFramework.SqlServer.dll
 d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-api\bin\EntityFramework.SqlServer.xml
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-api\bin\AutoMapper.dll
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-api\bin\System.ValueTuple.dll
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-api\bin\AutoMapper.pdb
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-api\bin\AutoMapper.xml
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-api\bin\System.ValueTuple.xml

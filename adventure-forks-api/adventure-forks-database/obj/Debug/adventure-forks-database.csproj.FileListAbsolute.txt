@@ -13,3 +13,8 @@ d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adve
 d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\obj\Debug\adventure-forks-database.csproj.CopyComplete
 d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\obj\Debug\adventure-forks-database.dll
 d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\obj\Debug\adventure-forks-database.pdb
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\AutoMapper.dll
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\System.ValueTuple.dll
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\AutoMapper.pdb
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\AutoMapper.xml
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\System.ValueTuple.xml

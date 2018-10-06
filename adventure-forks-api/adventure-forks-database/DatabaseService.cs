@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using Serilog;
 
 namespace adventure_forks_database
@@ -14,25 +15,27 @@ namespace adventure_forks_database
             _entities = new AdventureWorks2017Entities();
         }
 
-        public List<Product> GetAllProducts()
+        public List<ProductDto> GetAllProducts()
         {
             try
             {
-                return _entities.Product.ToList();
+                var products = _entities.Product.ToList();
+                return Mapper.Map<List<Product>, List<ProductDto>>(products);
             }
             catch (Exception e)
             {
                 Log.Error(e, "An error occurred while trying to retrieve all products.");
             }
 
-            return new List<Product>();
+            return new List<ProductDto>();
         }
 
-        public Product GetProduct(int productId)
+        public ProductDto GetProduct(int productId)
         {
             try
             {
-                return _entities.Product.FirstOrDefault(x => x.ProductID == productId);
+                var product = _entities.Product.FirstOrDefault(x => x.ProductID == productId);
+                return Mapper.Map<Product, ProductDto>(product);
             }
             catch (Exception e)
             {
@@ -42,7 +45,7 @@ namespace adventure_forks_database
             return null;
         }
 
-        public Product CreateProduct(
+        public ProductDto CreateProduct(
             string name, 
             string productNumber, 
             decimal standardCost, 
@@ -85,7 +88,7 @@ namespace adventure_forks_database
                 _entities.Product.Add(newProduct);
                 _entities.SaveChanges();
 
-                return newProduct;
+                return Mapper.Map<Product, ProductDto>(newProduct);
             }
             catch (Exception e)
             {
@@ -95,26 +98,19 @@ namespace adventure_forks_database
             return null;
         }
 
-        public bool UpdateProduct(
-            int productId, 
-            string name,
-            string productNumber,
-            decimal standardCost,
-            decimal listPrice,
-            string size,
-            decimal weight)
+        public bool UpdateProduct(ProductDto productDto)
         {
             try
             {
-                var product = _entities.Product.FirstOrDefault(x => x.ProductID == productId);
+                var product = _entities.Product.FirstOrDefault(x => x.ProductID == productDto.ProductId);
                 if (product != null)
                 {
-                    product.Name = name;
-                    product.ProductNumber = productNumber;
-                    product.StandardCost = standardCost;
-                    product.ListPrice = listPrice;
-                    product.Size = size;
-                    product.Weight = weight;
+                    product.Name = productDto.Name;
+                    product.ProductNumber = productDto.ProductNumber;
+                    product.StandardCost = productDto.StandardCost;
+                    product.ListPrice = productDto.ListPrice;
+                    product.Size = productDto.Size;
+                    product.Weight = productDto.Weight;
                     product.ModifiedDate = DateTime.Now;
                     _entities.SaveChanges();
                     return true;
