@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Serilog;
-using Serilog.Core;
 
 namespace adventure_forks_database
 {
@@ -53,9 +52,10 @@ namespace adventure_forks_database
         {
             try
             {
+                var newProductId = _entities.Product.Count();
                 var newProduct = new Product
                 {
-                    ProductID = _entities.Product.Count(),
+                    ProductID = newProductId,
                     Name = name,
                     ProductNumber = productNumber,
                     MakeFlag = true,

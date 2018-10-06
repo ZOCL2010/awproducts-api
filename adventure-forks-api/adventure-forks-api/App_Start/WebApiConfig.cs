@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Reflection;
+using System.Web.Http;
 using adventure_forks_database;
 using Autofac;
 using Autofac.Integration.WebApi;
@@ -10,6 +11,7 @@ namespace adventure_forks_api
         public static void Register(HttpConfiguration config)
         {
             var containerBuilder = new ContainerBuilder();
+            containerBuilder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             containerBuilder.RegisterType<DatabaseService>().As<IDatabaseService>();
             var container = containerBuilder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
