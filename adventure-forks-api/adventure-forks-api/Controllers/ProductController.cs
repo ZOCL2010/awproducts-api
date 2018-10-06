@@ -18,15 +18,18 @@ namespace adventure_forks_api.Controllers
 
         // GET api/products
         [SwaggerOperation("Gets all documents.")]
-        public IEnumerable<Product> Get()
+        [SwaggerResponse(HttpStatusCode.OK)]
+        public IHttpActionResult Get()
         {
-            return _databaseService.GetAllProducts();
+            var allProducts = _databaseService.GetAllProducts();
+            return Ok(allProducts);
         }
 
         // GET api/products/{id}
         [SwaggerOperation("Gets document by document Id.")]
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
+        [Route("products/{id}")]
         public IHttpActionResult Get(int id)
         {
             var product = _databaseService.GetProduct(id);
@@ -78,6 +81,7 @@ namespace adventure_forks_api.Controllers
         [SwaggerOperation("Removes document by document Id.")]
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
+        [Route("products/{id}")]
         public IHttpActionResult Delete(int productId)
         {
             var result = _databaseService.DeleteProduct(productId);

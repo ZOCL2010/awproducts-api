@@ -49,5 +49,10 @@ namespace adventure_forks_database
         public virtual DbSet<WorkOrder> WorkOrder { get; set; }
         public virtual DbSet<WorkOrderRouting> WorkOrderRouting { get; set; }
         public virtual DbSet<ProductDocument> ProductDocument { get; set; }
+
+        private void FixEfProviderServicesProblem()
+        {
+            var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+        }
     }
 }
