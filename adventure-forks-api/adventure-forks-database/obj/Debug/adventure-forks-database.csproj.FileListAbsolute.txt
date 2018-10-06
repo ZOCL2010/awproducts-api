@@ -1,0 +1,15 @@
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\adventure-forks-database.dll.config
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\adventure-forks-database.dll
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\adventure-forks-database.pdb
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\EntityFramework.dll
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\EntityFramework.SqlServer.dll
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\Serilog.dll
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\EntityFramework.xml
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\EntityFramework.SqlServer.xml
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\Serilog.pdb
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\bin\Debug\Serilog.xml
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\obj\Debug\adventure-forks-database.csprojAssemblyReference.cache
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\obj\Debug\adventure-forks-database.csproj.CoreCompileInputs.cache
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\obj\Debug\adventure-forks-database.csproj.CopyComplete
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\obj\Debug\adventure-forks-database.dll
+d:\EPAM\EPAM CDP\Azure\Module 2\git\adventure-forks-api\adventure-forks-api\adventure-forks-database\obj\Debug\adventure-forks-database.pdb

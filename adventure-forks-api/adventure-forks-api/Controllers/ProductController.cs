@@ -1,52 +1,92 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using adventure_forks_database;
 using Swashbuckle.Swagger.Annotations;
 
 namespace adventure_forks_api.Controllers
 {
+    [Route("products")]
     public class ProductController : ApiController
     {
-        // GET api/values
-        [SwaggerOperation("GetAll")]
-        public IEnumerable<string> Get()
+        private readonly IDatabaseService _databaseService;
+
+        public ProductController(IDatabaseService databaseService)
         {
-            return new string[] { "value1", "value2" };
+            _databaseService = databaseService;
         }
 
-        // GET api/values/5
-        [SwaggerOperation("GetById")]
+        // GET api/products
+        [SwaggerOperation("Gets all documents.")]
+        public IEnumerable<Product> Get()
+        {
+            return _databaseService.GetAllProducts();
+        }
+
+        // GET api/products/{id}
+        [SwaggerOperation("Gets document by document Id.")]
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return "value";
+            var product = _databaseService.GetProduct(id);
+            if (product == null)
+            {
+                return NotFound();
+
+            }
+
+            return Ok(product);
         }
 
-        // POST api/values
-        [SwaggerOperation("Create")]
+        // POST api/products
+        [SwaggerOperation("Creates new document.")]
         [SwaggerResponse(HttpStatusCode.Created)]
-        public void Post([FromBody]string value)
+        public IHttpActionResult Post([FromUri] string name, 
+                                      [FromUri] string productNumber, 
+                                      [FromUri] decimal standardCost,
+                                      [FromUri] decimal listPrice, 
+                                      [FromUri] string size, 
+                                      [FromUri] decimal weight)
         {
+            var newProduct = _databaseService.CreateProduct(name, productNumber, standardCost, listPrice, size, weight);
+            return Created($"/products/{newProduct.ProductID}", newProduct);
         }
 
-        // PUT api/values/5
-        [SwaggerOperation("Update")]
+        // PUT api/products/{id}
+        [SwaggerOperation("Updates document.")]
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult Put([FromUri] int productId, 
+                                     [FromUri] string name,
+                                     [FromUri] string productNumber,
+                                     [FromUri] decimal standardCost,
+                                     [FromUri] decimal listPrice,
+                                     [FromUri] string size,
+                                     [FromUri] decimal weight)
         {
+            var result = _databaseService.UpdateProduct(productId, name, productNumber, standardCost, listPrice, size, weight);
+            if (result)
+            {
+                return Ok();
+            }
+
+            return NotFound();
         }
 
-        // DELETE api/values/5
-        [SwaggerOperation("Delete")]
+        // DELETE api/products/{id}
+        [SwaggerOperation("Removes document by document Id.")]
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
-        public void Delete(int id)
+        public IHttpActionResult Delete(int productId)
         {
+            var result = _databaseService.DeleteProduct(productId);
+            if (result)
+            {
+                return Ok();
+            }
+
+            return NotFound();
         }
     }
 }
